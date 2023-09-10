@@ -1,7 +1,11 @@
 services:
   app:
     build: .
+    entrypoint: ./docker-entrypoint.sh
+    command: pnpm run dev
     volumes:
       - .:/app
     ports:
       - 4321:4321
+    stdin_open: true
+    tty: true
