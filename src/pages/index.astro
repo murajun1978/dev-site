@@ -1,10 +1,16 @@
 ---
 import Base from '../templates/Base.astro'
 
-const title = 'Devlog'
-const description = "murajun1978's blog for dev"
+import { AppConfig } from '../AppConfig'
+
+const {
+  site_name,
+  title,
+  description,
+  author
+} = AppConfig
 ---
 
-<Base head={{ title, description }}>
-  <h1>murajun1978's dev blog</h1>
+<Base head={{ title, description, author }}>
+  <h1>{site_name}</h1>
 </Base>
