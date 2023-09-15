@@ -1,4 +1,5 @@
 ---
+import { Footer } from '../components/Footer'
 export interface Props {
   head: {
     title: string;
@@ -14,13 +15,14 @@ const { head: { title, description, author } } = Astro.props as Props
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/logo.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{`${title} 🚀 murajun1978.dev`}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{title}</title>
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<meta name="author" content={author}>
 	</head>
 	<body>
     <slot></slot>
+		<Footer />
 	</body>
 </html>
