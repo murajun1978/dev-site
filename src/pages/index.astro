@@ -1,5 +1,6 @@
 ---
 import Base from '../templates/Base.astro'
+import 'bulma/css/bulma.css'
 
 import { AppConfig } from '../AppConfig'
 
@@ -12,5 +13,10 @@ const {
 ---
 
 <Base head={{ title, description, author }}>
-  <h1>{site_name}</h1>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">{site_name}</h1>
+      <p class="subtitle">{description}</p>
+    </div>
+  </section>
 </Base>
