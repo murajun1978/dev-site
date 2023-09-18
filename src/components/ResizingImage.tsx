@@ -6,6 +6,8 @@ type ImageProps = {
   loading?: 'lazy' | 'eager' | undefined
 }
 
+const isDev = import.meta.env.DEV
+
 export const ResizingImage: React.FC<ImageProps> = ({
   src,
   alt,
@@ -13,7 +15,6 @@ export const ResizingImage: React.FC<ImageProps> = ({
   height,
   loading = 'lazy'
 }) => {
-  const isDev = import.meta.env.DEV
   const imageSrc = isDev ? src : `/cdn-cgi/image/height=${height},width=${width},format=auto${src}`
 
   return (
