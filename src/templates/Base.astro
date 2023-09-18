@@ -1,4 +1,5 @@
 ---
+import { Main } from '../components/Main'
 import { Footer } from '../components/Footer'
 export interface Props {
   head: {
@@ -21,8 +22,10 @@ const { head: { title, description, author } } = Astro.props as Props
 		<meta name="description" content={description} />
 		<meta name="author" content={author}>
 	</head>
-	<body>
-    <slot></slot>
+	<body class="flex flex-col min-h-screen bg-white dark:bg-gray-900">
+		<main class="flex-grow">
+			<slot></slot>
+		</main>
 		<Footer />
 	</body>
 </html>
