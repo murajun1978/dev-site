@@ -10,7 +10,6 @@ const {
   description,
   author
 } = AppConfig
-const isDev = import.meta.env.DEV
 ---
 
 <Base head={{ title, description, author }}>
@@ -26,7 +25,7 @@ const isDev = import.meta.env.DEV
         </p>
       </div>
       <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-        <Image src="/avatar.png" alt="murajun1978" width="225" height="225" isDev />
+        <Image src="/avatar.png" alt="murajun1978" width="225" height="225" />
       </div>
     </div>
   </section>

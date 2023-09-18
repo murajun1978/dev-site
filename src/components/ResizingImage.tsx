@@ -4,7 +4,6 @@ type ImageProps = {
   width: number
   height: number
   loading?: 'lazy' | 'eager' | undefined
-  isDev?: boolean
 }
 
 export const ResizingImage: React.FC<ImageProps> = ({
@@ -12,10 +11,10 @@ export const ResizingImage: React.FC<ImageProps> = ({
   alt,
   width,
   height,
-  loading = 'lazy',
-  isDev = true
+  loading = 'lazy'
 }) => {
-  const imageSrc = isDev ? src : `/cdn-cgi/image/height=${height},width=${width},format=auto${src}`
+  const isCfImage = import.meta.env.USE_CLOUDFLARE_IMAGE
+  const imageSrc = isCfImage ? `/cdn-cgi/image/height=${height},width=${width},format=auto${src}` : src
 
   return (
     <img src={imageSrc} alt={alt} width={width} height={height} loading={loading} />
