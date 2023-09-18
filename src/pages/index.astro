@@ -1,7 +1,7 @@
 ---
 import Base from '../templates/Base.astro'
 import { AppConfig } from '../AppConfig'
-import { ResizingImage } from '../components/ResizingImage'
+import { Image } from 'astro:assets'
 
 const {
   site_name,
@@ -24,7 +24,7 @@ const {
         </p>
       </div>
       <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-        <ResizingImage src="/avatar.png" alt="murajun1978" width="225" height="225" />
+        <Image src="/avatar.png" alt="murajun1978" width="225" height="225" />
       </div>
     </div>
   </section>
