@@ -13,7 +13,7 @@ export const ResizingImage: React.FC<ImageProps> = ({
   height,
   loading = 'lazy'
 }) => {
-  const isCfImage = import.meta.env.USE_CLOUDFLARE_IMAGE
+  const isCfImage = import.meta.env.PUBLIC_USE_CLOUDFLARE_IMAGE
   const imageSrc = isCfImage ? `/cdn-cgi/image/height=${height},width=${width},format=auto${src}` : src
 
   return (
